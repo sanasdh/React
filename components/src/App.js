@@ -1,26 +1,35 @@
-import './App.css';
-
+import faker from 'faker'
+import ComponentDetail from './ComponentDetail/ComponentDetail'
+import ApprovalCard from './ApprovalCard/ApprovalCard'
 function App() {
+  let author="Alex"
   return (
     <div className="ui container comments">
-      <div className="comment">
-        <a href="/" className="avatar">
-          <img alt="avatar"/>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sam
-          </a>
-          <div className="metadata">
-            <span className="data">
-              Today at 6:00PM
-            </span>
-          </div>
-          <div className="text">
-            Nice blog Post!
-          </div>
-        </div>
-      </div>
+      <ApprovalCard>
+        <div><h4>warning!</h4>
+        Are you sure?</div>
+      </ApprovalCard>
+      <ApprovalCard>
+<ComponentDetail 
+  author="Sam" 
+  timeAgo="Today at 1" 
+  commentTex="Nice blog Post!" 
+  avatar={faker.image.image()} />
+  </ApprovalCard>
+  <ApprovalCard>
+<ComponentDetail 
+  author={author} 
+  timeAgo="Today at 2" 
+  commentTex="Nice blog" 
+  avatar={faker.image.image()} />
+  </ApprovalCard>
+  <ApprovalCard>
+<ComponentDetail 
+  author="Sana" 
+  timeAgo="Today at 10" 
+  commentTex="Good blog Post!" 
+  avatar={faker.image.image()} />
+  </ApprovalCard>
     </div>
   );
 }
