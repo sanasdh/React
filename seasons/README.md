@@ -1,3 +1,4 @@
 # QA
 **Q:** What is "extends React.Component" exactly?
+
 **A:** When we make a class we're creating a new class inside JS that has just one method assigned to it -> render() method. In order to use a class based component with react however, react expects that our class based component has many other methods attached to it. We follow thes other methods from other class called React Component => It allows us to pull a ton of built in functionality from this (we are sub classing react.component)
