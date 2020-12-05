@@ -1,6 +1,7 @@
 import React from 'react'
 // import "semantic-ui-css/semantic.min.css";
 import SeasonDisplay from './SeasonDisplay'
+import Spinner from './Spinner';
 class App extends React.Component {
   constructor(props){
     super(props) 
@@ -30,7 +31,7 @@ if(this.state.errMsg && !this.state.lat){
     </div>
         )
 }
-return <div> Loading</div>
+return <Spinner />
   }
 }
 
