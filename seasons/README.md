@@ -14,3 +14,8 @@
 **Q:** What is super(props)?
 
 **A:**  App is extending functionality fro react component(base class). this base class has a constructor oh its own! when we define a constructor inside our app class, we are essentially overriding the constructor function that is inside our base class. but we still want to make sure that all the set up code inside of this thing's constructor function still gets called! => super is the refrence to the paren'ts constructor function
+
+**Q:** How ro have default values for props in component?
+**A:** We have two ways:
+1. Use the || -> {props.msg || 'Loading...'}
+2. Use defaultProps for component -> Spinner.defaultProps ={ msg: 'Loading'}
