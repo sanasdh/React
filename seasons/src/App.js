@@ -17,22 +17,32 @@ class App extends React.Component {
     err=> this.setState({errMsg:err.message})
   );
   }
-  render(){
-if(this.state.errMsg && !this.state.lat){
-  return(
-    <div>
-    Error: {this.state.errMsg}
-    </div>
-        )
-} else if(!this.state.errMsg && this.state.lat){
-  return(
-    <div>
-<SeasonDisplay lat={this.state.lat}/>
-    </div>
-        )
-}
-return <Spinner />
+
+  renderContent (){
+ if(this.state.errMsg && !this.state.lat){
+    return(
+      <div>
+      Error: {this.state.errMsg}
+      </div>
+          )
+  } else if(!this.state.errMsg && this.state.lat){
+    return( 
+      <div>
+  <SeasonDisplay lat={this.state.lat}/>
+      </div>
+    )
   }
+  return <Spinner message='Please accept location request ...' />
 }
+  render() {
+    return(
+    <div className="border red">
+      {this.renderContent()}
+    </div>
+        )
+}
+}
+
+  
 
 export default App;
