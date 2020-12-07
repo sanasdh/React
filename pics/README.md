@@ -5,9 +5,13 @@
 **Q:** What is the difference between controlled and uncontrolled element?
 
 **A:** In the controlled version we are using "setState". whenever we use setstate the component rerenders itself. and now we have saved our value inside the value property. the value porp will overwrite whatever text is inside the input. Controlled:
-``` <input type="text"
+```js
+ <input type="text"
          value={this.state.term}
-         onChange={(e)=> this.setState({term: e.target.value})} /> ```
+         onChange={(e)=> this.setState({term: e.target.value})} /> 
+```
 
 But in the uncontrolled version we wouldn't know what the value of is input is, in any given time. for that we had to go to HTML DOM, and pull out the value. only when the callback function was called, React could know what the vlaue is. uncontrolled:
-``` <input type="text" onChange={this.onInputChange} />``` 
+```js
+ <input type="text" onChange={this.onInputChange} />
+``` 
