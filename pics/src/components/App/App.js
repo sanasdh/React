@@ -1,9 +1,11 @@
 import React from 'react'
-import axios from 'axios'
+import unsplash from '../../api/unsplash'
+import ImageList from '../ImageList/ImageList'
 import SearchBar from '../SearchBar/SearchBar'
-const CLIENTID = process.env.CLIENTID;
 class App extends React.Component {
- 
+ state={
+   images: []
+ }
     // https://unsplash.com/documentation#search-photos
     // the get request will get 2 args. first the address that we want to make a request to (root url+end point), 2nd arg is an obj that will have a bunch of options that will customize this request
     // params specifies the different query string parameters we want to add into this request
@@ -19,18 +21,18 @@ class App extends React.Component {
 // }).then(response =>{
 //   console.log(response.data.results)
 // })
-async onSearchSubmit(term){
-const response = await axios.get('https://api.unsplash.com/search/photos',{
+ onSearchSubmit = async (term)=>{
+const response = await unsplash.get('/search/photos',{
 params:{query: term},
-headers:{
-  Authorization: CLIENTID
-  }
 })
+
+this.setState({images: response.data.results})
   }
   render(){
   return (
     <div className="ui container" style={{marginTop: '10px'}}>
       <SearchBar onSubmit={this.onSearchSubmit} />
+      <ImageList images={this.state.images} />
     </div>
   )
 }
