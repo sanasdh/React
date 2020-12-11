@@ -1,5 +1,6 @@
 # Intro
 In this App, the user can search for anything. Then the app will look up the unsplash API and as a result shows pictures of that search
+![First Pgae](https://github.com/sanasdh/React/blob/master/pics/public/Capture.JPG?raw=true)
 
 # Q&A
 **Q:** Why don't we put () after the function inside out onChange property?
