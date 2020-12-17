@@ -1,11 +1,9 @@
 import React from 'react'
 
-const Button = () => {
-  return (
-    <div>
-      
-    </div>
-  )
+class Button extends React.Component{
+  render(){
+    return <button className="ui primary"> Submit</button>
+  }
 }
 
 export default Button
